@@ -1,4 +1,0 @@
-{
-  "input": "Create entity structure for healthcare appointment booking system",
-  "output": "Patient has patientId^PK, firstName, lastName, dateOfBirth, gender (Male, Female, Other, PreferNotToSay), email, phone, address, medicalHistory, insuranceInfo, outstandingBalance., lastVisitDate, preferredProviderId^FK.\n\nProvider has providerId^PK, firstName, lastName, specialization, licenseNumber, email, phone, address, availability, averageRating., isActive, locationId^FK.\n\nAppointment has appointmentId^PK, patientId^FK, providerId^FK, appointmentDate, startTime, endTime, status (Confirmed, CancelledByPatient, CancelledByClinic, Completed, NoShow, Rescheduled), type (InPerson, Telehealth), telehealthUrl., notes, createdDate, lastModifiedDate.\n\nLocation has locationId^PK, name, address, phone, email, type (Hospital, Lab, TelehealthHub), capacity, operatingHours, isActive."
-} 
