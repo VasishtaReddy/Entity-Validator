@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator Test</title>
+    <script src="validators.js"></script>
+    <script>
+        window.onload = function() {
+            // Test validators are loading
+            if (typeof validators === 'undefined') {
+                document.body.innerHTML = '<h1 style="color: red;">Error: Validators not loaded!</h1>';
+                return;
+            }
+            
+            // Test a simple validator
+            const testData = {
+                input: "Test input",
+                output: "Test output"
+            };
+            
+            try {
+                const result = validators.V001.validate(testData);
+                document.body.innerHTML = `
+                    <h1 style="color: green;">Validators loaded successfully!</h1>
+                    <pre>Test result for V001: ${JSON.stringify(result, null, 2)}</pre>
+                    <p>Validator count: ${Object.keys(validators).length}</p>
+                `;
+            } catch (error) {
+                document.body.innerHTML = `
+                    <h1 style="color: red;">Error testing validators: ${error.message}</h1>
+                `;
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Testing validators.js...</h1>
+</body>
+</html> 
